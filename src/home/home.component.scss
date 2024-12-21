@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Oswald', sans-serif;
+}
+
+.antman {
+  opacity: 0.15;
+}
+
+.main {
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /*background: linear-gradient(-135deg, #c850c0, #4158d0);*/
+  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+  /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);*/
+  /* clip-path: circle(25px at calc(0% + 45px) 45px); */
+  background: orange;
+  clip-path: circle(25px at calc(100% - 45px) 45px);
+  transition: all 0.3s ease-in-out;
+}
+
+#active:checked~.wrapper {
+  clip-path: circle(75%);
+}
+
+.menu-btn {
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  /* left: 20px; */
+  top: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  /*background: linear-gradient(-135deg, #c850c0, #4158d0);*/
+  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+  /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%); */
+  background: black;
+  transition: all 0.3s ease-in-out;
+}
+
+#active:checked~.menu-btn {
+  color: #fff;
+}
+
+#active:checked~.menu-btn i:before {
+  content: "\f00d";
+}
+
+.wrapper ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+}
+
+.wrapper ul li {
+  margin: 15px 0;
+}
+
+.wrapper ul li a {
+  color: none;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 5px 30px;
+  color: black;
+  border-radius: 50px;
+  background: white;
+  position: relative;
+  line-height: 50px;
+  transition: all 0.3s ease;
+}
+
+.wrapper ul li a:after {
+  position: absolute;
+  content: "";
+  background: #fff;
+  background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+  /*background: linear-gradient(375deg, #1cc7d0, #2ede98);*/
+  width: 104%;
+  height: 110%;
+  left: -2%;
+  top: -5%;
+  /* if the font is 'Oswald'*/
+  border-radius: 50px;
+  transform: scaleY(0);
+  z-index: -1;
+  animation: rotate 1.5s linear infinite;
+  transition: transform 0.3s ease;
+}
+
+.wrapper ul li a:hover:after {
+  transform: scaleY(1);
+}
+
+.wrapper ul li a:hover {
+  color: black;
+  background: orange;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  text-align: left;
+  width: 100%;
+  color: #202020;
+  padding-left: 7rem;
+}
+
+.content .title {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.content p {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+@keyframes rotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.wrappertext {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 80px);
+  justify-content: center;
+  align-items: center;
+  padding: 0 10%;
+  overflow: hidden;
+}
+
+.cols {
+  width: 50%;
+}
+
+.cols0 {
+  z-index: 5;
+}
+
+
+.topline {
+  display: block;
+  position: relative;
+  font-size: 35px;
+  letter-spacing: 5px;
+  color: #3d535f;
+}
+
+.topline::after {
+  position: absolute;
+  content: '';
+  height: 4px;
+  width: 45px;
+  bottom: 10px;
+  background-color: rgb(228, 152, 10);
+}
+.multiText {
+  color: #7f00ff;
+  text-transform: capitalize;
+}
+
+#heading{
+  font-size: 5em;
+}
+#typedElement{
+  color: rgb(228, 152, 10);
+}
+h1 {
+  display: block;
+  font-size: 7em;
+  font-weight: 900;
+  color: #3d535f;
+}
+
+
+.imgbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.imgbox img {
+  position: relative;
+  height: 100%;
+  width: calc(130% - 80px);
+  top: -5px;
+  padding-top: 15%;
+  right: 50px;
+  transform: rotateY(180deg);
+  animation: animateUser 4s linear infinite;
+}
+
+
+//Mouse
+body,
+html {
+  padding: 0;
+  margin: 0;
+  overscroll-behavior: none;
+  overflow: hidden;
+}
+
+/* for tutorial link only */
+.links {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 18px;
+  font-family: sans-serif;
+  background-color: white;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  margin-left: 1em;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a img.icon {
+  display: inline-block;
+  height: 1em;
+  margin: 0 0 -0.1em 0.3em;
+}
